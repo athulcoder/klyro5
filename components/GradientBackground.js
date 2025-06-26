@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Typed from "react-typed";
+import TypingEffect from "./TypingEffect";
 
 export default function GradientBackground() {
   return (
@@ -20,9 +22,7 @@ export default function GradientBackground() {
         <h1 className="max-lg:text-center text-4xl  font-bold my-3">
           Rapidly build modern premium websites
         </h1>
-        <span className="text-2xl font-bold my-3 ">
-          Fast. Creative. Scalable
-        </span>
+        <TypingEffect />
 
         <h4 className="text-center text-gray-400 mt-3 leading-[28px] max-w-[600px]">
           Klyro5 is your partner in creating cutting-edge websites and digital
@@ -31,12 +31,12 @@ export default function GradientBackground() {
         </h4>
 
         <div className="flex gap-4 my-4">
-          <button className="bg-blue-600 py-2 px-4 rounded-2xl w-[130px]  hover:border-white hover:border-[2px] cursor-pointer">
-            Portfolio
+          <button className="bg-blue-600 py-2 px-4 rounded-2xl w-[130px]  hover:border-white hover:border-[2px] cursor-pointer duration-100">
+            Get start
           </button>
 
-          <button className="hover:border-white py-3 px-6 rounded-2xl w-[130px] cursor-pointer border-[2px] border-blue-600 ">
-            Get start
+          <button className="hover:border-white py-3 px-6 rounded-2xl w-[130px] cursor-pointer border-[2px] border-blue-600 duration-100">
+            Portfolio
           </button>
         </div>
       </div>
