@@ -6,7 +6,7 @@ import TypingEffect from "./TypingEffect";
 
 export default function GradientBackground() {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-[#0b1120]">
+    <div className="relative w-full h-screen overflow-hidden bg-[#0b1120] ">
       {/* Pulsing yellow energy blobs */}
       <div className="absolute w-full h-full overflow-hidden z-0">
         <div className="absolute w-96 h-96 bg-purple-800 opacity-30 blur-3xl rounded-full animate-pulse-slow top-1/4 left-1/3" />
