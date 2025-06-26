@@ -11,15 +11,15 @@ export default function GradientBackground() {
       <div className="absolute w-full h-full overflow-hidden z-0">
         <div className="absolute w-96 h-96 bg-purple-800 opacity-30 blur-3xl rounded-full animate-pulse-slow top-1/4 left-1/3" />
         <div className="absolute w-80 h-80 bg-blue-800 opacity-20 blur-2xl rounded-full animate-pulse-fast top-2/3 left-1/4" />
-        <div className="absolute w-64 h-64 bg-yellow-500 opacity-25 blur-2xl rounded-full animate-pulse-mid top-1/2 left-2/3" />
+        <div className="absolute w-64 h-64 bg-pink-500 opacity-25 blur-2xl rounded-full animate-pulse-mid top-1/2 left-2/3" />
       </div>
 
       {/* Optional animated background gradient for extra depth */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-green-900 opacity-20 blur-2xl animate-gradient z-0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-pink-900 opacity-20 blur-2xl animate-gradient z-0" />
 
       {/* Center content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-white  p-3 ">
-        <h1 className="max-lg:text-center text-4xl  font-bold my-3">
+        <h1 className="max-lg:text-center text-4xl  font-bold my-3 min-lg:text-xl">
           Rapidly build modern premium websites
         </h1>
         <TypingEffect />
