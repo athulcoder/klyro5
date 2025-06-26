@@ -99,3 +99,16 @@ body {
 .animate-pulse-fast {
   animation: pulseFast 2s ease-in-out infinite;
 }
+
+
+/* Scrollbar hide */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}

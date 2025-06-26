@@ -3,8 +3,8 @@ import React from "react";
 
 function ServiceCard({ title, image, description }) {
   return (
-    <div className="bg-[#2d2d2d] shadow-xl w-[150px] h-[240px] rounded-lg overflow-hidden transition  duration-300 ">
-      <div className="w-full h-[120px] relative">
+    <div className="bg-[#2d2d2d] min-w-[200px]   shadow-xl h-[300px] rounded-lg  transition  duration-300 ">
+      <div className="w-full h-[180px] relative">
         <Image
           src={image}
           alt={title}
@@ -14,8 +14,10 @@ function ServiceCard({ title, image, description }) {
         />
       </div>
       <div className="p-2 flex flex-col gap-2">
-        <h1 className="text-sm font-semibold text-white">{title}</h1>
-        <p className="text-gray-400 text-[12px]">{description}</p>
+        <h1 className="text-xs font-semibold text-white text-wrap">{title}</h1>
+        <p className="text-gray-400 text-[12px] text-left text-wrap">
+          {description}
+        </p>
       </div>
     </div>
   );
