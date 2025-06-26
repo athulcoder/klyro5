@@ -1,45 +1,25 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function GradientBackground() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const update = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", update);
-    return () => window.removeEventListener("mousemove", update);
-  }, []);
-
   return (
-    <div
-      className="relative w-full h-screen overflow-hidden cursor-none"
-      style={{
-        background: `radial-gradient(
-          circle at ${position.x}px ${position.y}px,
-          rgba(128, 0, 255, 0.6),   /* purple */
-          rgba(0, 128, 255, 0.6),   /* blue */
-          rgba(15, 23, 42, 1)       /* dark navy background */
-        )`,
-        transition: "background 0.2s ease",
-      }}
-    >
-      {/* Custom tiny cursor */}
-      <div
-        className="pointer-events-none fixed z-50"
-        style={{
-          left: `${position.x - 2}px`,
-          top: `${position.y - 2}px`,
-          width: "4px",
-          height: "4px",
-          backgroundColor: "white",
-          borderRadius: "9999px",
-        }}
-      />
+    <div className="relative w-full h-screen overflow-hidden bg-[#0b1120]">
+      {/* Pulsing yellow energy blobs */}
+      <div className="absolute w-full h-full overflow-hidden z-0">
+        <div className="absolute w-96 h-96 bg-purple-800 opacity-30 blur-3xl rounded-full animate-pulse-slow top-1/4 left-1/3" />
+        <div className="absolute w-80 h-80 bg-blue-800 opacity-20 blur-2xl rounded-full animate-pulse-fast top-2/3 left-1/4" />
+        <div className="absolute w-64 h-64 bg-yellow-500 opacity-25 blur-2xl rounded-full animate-pulse-mid top-1/2 left-2/3" />
+      </div>
+
+      {/* Optional animated background gradient for extra depth */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-700 to-blue-600 opacity-20 blur-2xl animate-gradient z-0" />
+
+      {/* Center content */}
       <div className="absolute inset-0 flex items-center justify-center z-10 text-white text-4xl font-bold">
-        Move your mouse
+        <div>
+          <Image src="/logo2.png" alt="" width={300} height={300} />
+        </div>
       </div>
     </div>
   );
