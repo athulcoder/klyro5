@@ -28,7 +28,7 @@ export default function SideNavPanel({ isOpen, onClose }) {
       onClick={onClose}
     >
       <div
-        className="bg-gray-700 rounded-lg  w-[400px] h-[400px] p-6 mt-5 mr-5 shadow-lg transition-transform duration-1000 transform translate-x-0"
+        className="bg-gray-700 rounded-lg  w-[300px] h-[300px] p-6 m-5 shadow-lg transition-transform duration-1000 transform translate-x-0"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -38,7 +38,7 @@ export default function SideNavPanel({ isOpen, onClose }) {
           <X className="w-6 h-6" />
         </button>
 
-        <nav className="flex flex-col gap-4 text-white">
+        <nav className="flex flex-col gap-4 text-gray-300">
           {navItems.map((item) => (
             <Link
               key={item.href}
