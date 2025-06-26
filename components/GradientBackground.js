@@ -19,7 +19,7 @@ export default function GradientBackground() {
 
       {/* Center content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-white  p-3 ">
-        <h1 className="max-lg:text-center text-4xl  font-bold my-3 min-lg:text-xl">
+        <h1 className="max-lg:text-center text-4xl  font-bold my-3 min-lg:text-5xl">
           Rapidly build modern premium websites
         </h1>
         <TypingEffect />
