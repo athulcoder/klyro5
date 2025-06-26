@@ -1,0 +1,62 @@
+import { BookCheck, CompassIcon, Home, Phone, Workflow } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { IoIosSearch } from "react-icons/io";
+import { RxHamburgerMenu } from "react-icons/rx";
+const navLinks = [
+  {
+    label: "Home",
+    href: "/",
+    icon: Home,
+  },
+  {
+    label: "Services",
+    href: "/services",
+    icon: Workflow,
+  },
+  {
+    label: "Works",
+    href: "/works",
+    icon: BookCheck,
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+    icon: Phone,
+  },
+  {
+    label: "About",
+    href: "/about",
+    icon: CompassIcon,
+  },
+];
+function TopNavigationBar() {
+  return (
+    <nav className="w-full h-[70px] z-50 flex items-center overflow-hidden justify-between fixed">
+      {/* left nav */}
+      <div className="flex gap-3 items-center max-lg:mx-3 min-lg:w-[30%] min-lg:justify-center ">
+        <div className="rounded-full w-[30px] h-[30px]">
+          <Image src="/logo.jpg" width={30} height={30} alt="" />
+        </div>
+        <h1 className="font-sans font-extrabold text-lg text-white ">KLYRO5</h1>
+      </div>
+
+      {/* right nav */}
+      <div className="flex gap-3 mx-3 items-center">
+        <IoIosSearch size={18} className="text-white min-lg:hidden" />
+        <RxHamburgerMenu size={18} className="text-white  min-lg:hidden" />
+      </div>
+      <ul className=" hidden  min-lg:flex gap-[50px] uppercase  items-center mx-3 min-lg:w-[70%] justify-center  text-sm font-sans text-white">
+        {navLinks.map(({ label, href }) => {
+          return (
+            <Link key={label} href={href}>
+              {label}
+            </Link>
+          );
+        })}
+      </ul>
+    </nav>
+  );
+}
+
+export default TopNavigationBar;
