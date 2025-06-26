@@ -34,7 +34,7 @@ function TopNavigationBar() {
   return (
     <nav className="w-full h-[70px] z-50 flex items-center overflow-hidden justify-between fixed backdrop-blur-xl bg-black/2">
       {/* left nav */}
-      <div className="flex gap-3 items-center max-lg:mx-3 min-lg:w-[30%] min-lg:justify-center ">
+      <div className="flex gap-3 items-center max-lg:mx-4 min-lg:w-[30%] min-lg:justify-center ">
         <div className="rounded-full w-[40px] h-[40px]">
           <Image src="/logo2.png" width={40} height={40} alt="" />
         </div>
@@ -42,11 +42,11 @@ function TopNavigationBar() {
       </div>
 
       {/* right nav */}
-      <div className="flex gap-3 mx-3 items-center">
-        <IoIosSearch size={18} className="text-white min-lg:hidden" />
-        <RxHamburgerMenu size={18} className="text-white  min-lg:hidden" />
+      <div className="flex gap-3 mx-4 items-center">
+        <IoIosSearch size={26} className="text-white min-lg:hidden" />
+        <RxHamburgerMenu size={26} className="text-white  min-lg:hidden" />
       </div>
-      <ul className=" hidden  min-lg:flex gap-[50px] uppercase  items-center mx-3 min-lg:w-[70%] justify-center  text-sm font-sans text-white ">
+      <ul className=" hidden  min-lg:flex gap-[50px] uppercase  items-center mx-4 min-lg:w-[70%] justify-center  text-sm font-sans text-white ">
         {navLinks.map(({ label, href }) => {
           return (
             <Link

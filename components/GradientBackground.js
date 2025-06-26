@@ -15,7 +15,7 @@ export default function GradientBackground() {
       </div>
 
       {/* Optional animated background gradient for extra depth */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-red-900 opacity-20 blur-2xl animate-gradient z-0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-green-900 opacity-20 blur-2xl animate-gradient z-0" />
 
       {/* Center content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-white  p-3 ">
