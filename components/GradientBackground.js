@@ -13,12 +13,31 @@ export default function GradientBackground() {
       </div>
 
       {/* Optional animated background gradient for extra depth */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-700 to-blue-600 opacity-20 blur-2xl animate-gradient z-0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-red-900 opacity-20 blur-2xl animate-gradient z-0" />
 
       {/* Center content */}
-      <div className="absolute inset-0 flex items-center justify-center z-10 text-white text-4xl font-bold">
-        <div>
-          <Image src="/logo2.png" alt="" width={300} height={300} />
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-white  p-3 ">
+        <h1 className="max-lg:text-center text-4xl  font-bold my-3">
+          Rapidly build modern premium websites
+        </h1>
+        <span className="text-2xl font-bold my-3 ">
+          Fast. Creative. Scalable
+        </span>
+
+        <h4 className="text-center text-gray-400 mt-3 leading-[28px] max-w-[600px]">
+          Klyro5 is your partner in creating cutting-edge websites and digital
+          platforms. From design to development, we craft high-performance,
+          user-first experiences that grow your business online.
+        </h4>
+
+        <div className="flex gap-4 my-4">
+          <button className="bg-blue-600 py-2 px-4 rounded-2xl w-[130px]  hover:border-white hover:border-[2px] cursor-pointer">
+            Portfolio
+          </button>
+
+          <button className="hover:border-white py-3 px-6 rounded-2xl w-[130px] cursor-pointer border-[2px] border-blue-600 ">
+            Get start
+          </button>
         </div>
       </div>
     </div>
