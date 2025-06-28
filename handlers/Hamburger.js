@@ -3,15 +3,21 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { X, Home, Briefcase, Folder, Phone, User } from "lucide-react";
+
 import { motion, AnimatePresence } from "framer-motion";
+import { CiHome } from "react-icons/ci";
+import { CiDesktop } from "react-icons/ci";
+import { CiBag1 } from "react-icons/ci";
+import { CiMobile3 } from "react-icons/ci";
+import { LiaUserAltSolid } from "react-icons/lia";
+import { VscChromeClose } from "react-icons/vsc";
 
 export const navItems = [
-  { label: "Home", href: "/", icon: Home },
-  { label: "Services", href: "/services", icon: Briefcase },
-  { label: "Works", href: "/works", icon: Folder },
-  { label: "Contact", href: "/contact", icon: Phone },
-  { label: "About", href: "/about", icon: User },
+  { label: "Home", href: "/", icon: CiHome },
+  { label: "Services", href: "/services", icon: CiDesktop },
+  // { label: "Works", href: "/works", icon: CiBag1 },
+  { label: "Contact", href: "/contact", icon: CiMobile3 },
+  { label: "About", href: "/about", icon: LiaUserAltSolid },
 ];
 
 export default function SideNavPanel({ isOpen, onClose }) {
@@ -37,16 +43,16 @@ export default function SideNavPanel({ isOpen, onClose }) {
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
-            transition={{ type: "spring", stiffness: 90, damping: 18 }}
+            transition={{ type: "tween", ease: "easeOut", duration: 0.3 }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-sm h-[90vh] bg-[#101726] border-t border-white/10 shadow-2xl p-6 rounded-t-2xl"
+            className="w-full max-w-sm h-[60vh] bg-[#101726] overflow-y-auto border-t border-white/10 shadow-2xl p-6 rounded-t-2xl"
           >
             <div className="flex justify-end mb-6">
               <button
                 onClick={onClose}
                 className="text-gray-400 hover:text-white transition"
               >
-                <X className="w-6 h-6" />
+                <VscChromeClose className="w-6 h-6" />
               </button>
             </div>
 
