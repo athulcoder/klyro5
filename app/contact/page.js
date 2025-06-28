@@ -14,31 +14,39 @@ export default function ContactPage() {
   const contactLinks = [
     {
       label: "Email",
-      href: "mailto:contact@klyro5.com",
+      href: "mailto:klyrofive@gmail.com",
       display: "contact@klyro5.com",
       icon: <MdEmail />,
     },
+
     {
-      label: "WhatsApp",
+      label: "+91 9605470067",
+      href: "https://wa.me/919605470067",
+      display: "Irfan VS",
+      icon: <FaWhatsapp />,
+    },
+    {
+      label: "+91 9400500609",
       href: "https://wa.me/919400500609",
-      display: "+91 9400500609",
+      display: "Amaan Ahammed V",
       icon: <FaWhatsapp />,
     },
     {
-      label: "WhatsApp",
+      label: "+91 9947811507",
       href: "https://wa.me/919947811507",
-      display: "+91 9947811507",
+      display: "Athul Sabu",
       icon: <FaWhatsapp />,
     },
+
     {
       label: "Instagram",
-      href: "https://instagram.com/klyro5",
-      display: "@klyro5",
+      href: "https://instagram.com/klyro.5",
+      display: "@klyro.5",
       icon: <FaInstagram />,
     },
     {
       label: "Facebook",
-      href: "https://facebook.com/klyro5",
+      href: "https://facebook.com/klyro.5",
       display: "facebook.com/klyro5",
       icon: <FaFacebookF />,
     },
