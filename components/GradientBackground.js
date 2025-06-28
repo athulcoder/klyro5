@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import TypingEffect from "./TypingEffect";
+import Link from "next/link";
 
 export default function GradientBackground() {
   return (
@@ -57,7 +58,7 @@ export default function GradientBackground() {
           className="flex gap-4 my-6"
         >
           <button className="bg-blue-600 py-2 px-4 rounded-2xl w-[130px] hover:border-white hover:border-[2px] cursor-pointer transition-all duration-150">
-            Get start
+            <Link href="/contact"> Contact Us</Link>
           </button>
 
           <button className="hover:border-white py-3 px-6 rounded-2xl w-[130px] cursor-pointer border-[2px] border-blue-600 transition-all duration-150">

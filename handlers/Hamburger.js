@@ -5,17 +5,13 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { CiHome } from "react-icons/ci";
-import { CiDesktop } from "react-icons/ci";
-import { CiBag1 } from "react-icons/ci";
-import { CiMobile3 } from "react-icons/ci";
+import { CiHome, CiDesktop, CiMobile3 } from "react-icons/ci";
 import { LiaUserAltSolid } from "react-icons/lia";
 import { VscChromeClose } from "react-icons/vsc";
 
 export const navItems = [
   { label: "Home", href: "/", icon: CiHome },
   { label: "Services", href: "/services", icon: CiDesktop },
-  // { label: "Works", href: "/works", icon: CiBag1 },
   { label: "Contact", href: "/contact", icon: CiMobile3 },
   { label: "About", href: "/about", icon: LiaUserAltSolid },
 ];
@@ -36,16 +32,16 @@ export default function SideNavPanel({ isOpen, onClose }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[9999] bg-black/40 backdrop-blur-sm flex justify-center items-end"
+          className="fixed inset-0 z-[9999] bg-black/40 backdrop-blur-sm flex justify-center items-start"
           onClick={onClose}
         >
           <motion.div
-            initial={{ y: "100%" }}
+            initial={{ y: "-100%" }}
             animate={{ y: 0 }}
-            exit={{ y: "100%" }}
+            exit={{ y: "-100%" }}
             transition={{ type: "tween", ease: "easeOut", duration: 0.3 }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-sm h-[60vh] bg-[#101726] overflow-y-auto border-t border-white/10 shadow-2xl p-6 rounded-t-2xl"
+            className="w-full h-[60vh] bg-[#101726] overflow-y-auto border-b border-white/10 shadow-2xl p-6 rounded-b-2xl"
           >
             <div className="flex justify-end mb-6">
               <button
@@ -56,7 +52,7 @@ export default function SideNavPanel({ isOpen, onClose }) {
               </button>
             </div>
 
-            <nav className="flex flex-col gap-6">
+            <nav className="flex flex-col gap-6 items-start">
               {navItems.map(({ href, label, icon: Icon }) => (
                 <Link
                   key={href}
