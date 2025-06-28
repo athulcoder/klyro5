@@ -65,7 +65,7 @@ export default function Footer() {
                 <FaTwitter size={20} />
               </a>
             </div>
-            <p className="text-sm text-gray-400"> contact@klyro5.com</p>
+            <p className="text-sm text-gray-400"> klyrofive@gmail.com</p>
           </div>
         </div>
 
