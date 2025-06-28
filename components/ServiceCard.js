@@ -14,10 +14,10 @@ function ServiceCard({ title, image, description }) {
         />
       </div>
       <div className="p-2 flex flex-col gap-2 ">
-        <h1 className="text-xs font-semibold text-white text-wrap min-lg:text-sm">
+        <h1 className="text-sm font-semibold text-white text-wrap min-lg:text-sm">
           {title}
         </h1>
-        <p className="text-gray-400 text-[12px] text-left text-wrap min-lg:text-[13px]">
+        <p className="text-gray-500 text-[12px] text-left text-wrap min-lg:text-[13px] font-medium">
           {description}
         </p>
       </div>

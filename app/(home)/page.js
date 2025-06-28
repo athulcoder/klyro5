@@ -1,5 +1,6 @@
 import { ServiceList } from "@/assets/services";
 import WhyChooseKlyro5 from "@/components/Features";
+import Footer from "@/components/Footer";
 import GradientBackground from "@/components/GradientBackground";
 import ServiceCard from "@/components/ServiceCard";
 import Image from "next/image";
@@ -26,7 +27,9 @@ export default function HomePage() {
           })}
         </div>
       </div>
+
       <WhyChooseKlyro5 />
+      <Footer />
     </div>
   );
 }
