@@ -3,14 +3,15 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { X } from "lucide-react";
+import { X, Home, Briefcase, Folder, Phone, User } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const navItems = [
-  { label: "Home", href: "/", icon: null },
-  { label: "Services", href: "/services", icon: null },
-  { label: "Works", href: "/works", icon: null },
-  { label: "Contact", href: "/contact", icon: null },
-  { label: "About", href: "/about", icon: null },
+  { label: "Home", href: "/", icon: Home },
+  { label: "Services", href: "/services", icon: Briefcase },
+  { label: "Works", href: "/works", icon: Folder },
+  { label: "Contact", href: "/contact", icon: Phone },
+  { label: "About", href: "/about", icon: User },
 ];
 
 export default function SideNavPanel({ isOpen, onClose }) {
@@ -20,39 +21,52 @@ export default function SideNavPanel({ isOpen, onClose }) {
     setMounted(true);
   }, []);
 
-  if (!isOpen || !mounted) return null;
+  if (!mounted) return null;
 
   return createPortal(
-    <div
-      className="fixed inset-0 z-[9999] bg-black/40 backdrop-blur-sm flex justify-end"
-      onClick={onClose}
-    >
-      <div
-        className="bg-gray-700 rounded-lg  w-[300px] h-[300px] p-6 m-5 shadow-lg transition-transform duration-1000 transform translate-x-0"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[9999] bg-black/40 backdrop-blur-sm flex justify-center items-end"
           onClick={onClose}
-          className="mb-6 text-gray-200 hover:text-white "
         >
-          <X className="w-6 h-6" />
-        </button>
+          <motion.div
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "100%" }}
+            transition={{ type: "spring", stiffness: 90, damping: 18 }}
+            onClick={(e) => e.stopPropagation()}
+            className="w-full max-w-sm h-[90vh] bg-[#101726] border-t border-white/10 shadow-2xl p-6 rounded-t-2xl"
+          >
+            <div className="flex justify-end mb-6">
+              <button
+                onClick={onClose}
+                className="text-gray-400 hover:text-white transition"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
 
-        <nav className="flex flex-col gap-4 text-gray-300">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={onClose}
-              className="flex items-center gap-2 font-bold"
-            >
-              {item.icon && <item.icon className="w-5 h-5" />}
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-      </div>
-    </div>,
+            <nav className="flex flex-col gap-6">
+              {navItems.map(({ href, label, icon: Icon }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  onClick={onClose}
+                  className="flex items-center gap-3 text-gray-300 hover:text-white font-medium transition"
+                >
+                  <Icon className="w-5 h-5" />
+                  <span className="text-base">{label}</span>
+                </Link>
+              ))}
+            </nav>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>,
     document.body
   );
 }
