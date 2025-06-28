@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://klyro5.vercel.app
+
+# Sitemaps
+Sitemap: https://klyro5.vercel.app/sitemap.xml
