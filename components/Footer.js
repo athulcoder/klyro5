@@ -2,8 +2,8 @@
 
 import { ServiceList } from "@/assets/services";
 import Image from "next/image";
-import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
-
+import { FaLinkedin, FaGithub, FaInstagram, FaFacebook } from "react-icons/fa";
+import { RiTwitterXFill } from "react-icons/ri";
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-200 pt-12 pb-6">
@@ -55,14 +55,23 @@ export default function Footer() {
               <a href="#" className="text-gray-400 hover:text-white">
                 <FaLinkedin size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <FaGithub size={20} />
+              <a
+                href="https://www.instagram.com/klyro.5?igsh=Z3NmdnlvdG02d2Rl"
+                className="text-gray-400 hover:text-white"
+              >
+                <FaFacebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a
+                href="https://www.instagram.com/klyro.5?igsh=Z3NmdnlvdG02d2Rl"
+                className="text-gray-400 hover:text-white"
+              >
                 <FaInstagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <FaTwitter size={20} />
+              <a
+                href="https://x.com/klyro5?t=USAeCvft31ozLd2bkl6jXw&s=09"
+                className="text-gray-400 hover:text-white"
+              >
+                <RiTwitterXFill size={20} />
               </a>
             </div>
             <p className="text-sm text-gray-400"> klyrofive@gmail.com</p>
