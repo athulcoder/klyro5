@@ -3,7 +3,7 @@ import React from "react";
 
 function ServiceCard({ title, image, description }) {
   return (
-    <div className="bg-[#2d2d2d] min-w-[200px] max-w-[300px]  min-lg:w-[240px] shadow-xl h-[310px] min-lg:h-[340px] rounded-lg  transition  duration-300 ">
+    <div className="bg-gray-800 min-w-[200px] max-w-[300px]  min-lg:w-[240px] shadow-xl h-[310px] min-lg:h-[340px] rounded-lg  transition  duration-300 ">
       <div className="w-full h-[180px] relative">
         <Image
           src={image}
