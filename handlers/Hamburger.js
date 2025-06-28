@@ -41,7 +41,7 @@ export default function SideNavPanel({ isOpen, onClose }) {
             exit={{ y: "-100%" }}
             transition={{ type: "tween", ease: "easeOut", duration: 0.3 }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full h-[60vh] bg-[#101726] overflow-y-auto border-b border-white/10 shadow-2xl p-6 rounded-b-2xl"
+            className="w-full h-[40vh] bg-[#101726] overflow-y-auto border-b border-white/10 shadow-2xl p-6 rounded-b-2xl"
           >
             <div className="flex justify-end mb-6">
               <button
