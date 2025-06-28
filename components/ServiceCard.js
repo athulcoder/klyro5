@@ -1,27 +1,27 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import React from "react";
 
-function ServiceCard({ title, image, description }) {
+function ServiceCard({ title, image, index }) {
   return (
-    <div className="bg-gray-800 min-w-[200px] max-w-[300px]  min-lg:w-[240px] shadow-xl h-[310px] min-lg:h-[340px] rounded-lg  transition  duration-300 ">
-      <div className="w-full h-[180px] relative">
-        <Image
-          src={image}
-          alt={title}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-t-lg"
-        />
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 w-full sm:w-[240px] md:w-[260px] lg:w-[280px] mx-auto"
+    >
+      <div className="relative w-full h-[160px] sm:h-[180px] md:h-[200px]">
+        <Image src={image} alt={title} fill className="object-cover" />
       </div>
-      <div className="p-2 flex flex-col gap-2 ">
-        <h1 className="text-sm font-semibold text-white text-wrap min-lg:text-sm">
+      <div className="p-4 text-center">
+        <h3 className="text-md font-semibold text-gray-800 dark:text-white">
           {title}
-        </h1>
-        <p className="text-gray-500 text-[12px] text-left text-wrap min-lg:text-[13px] font-medium">
-          {description}
-        </p>
+        </h3>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

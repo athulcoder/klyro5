@@ -1,5 +1,7 @@
 "use client";
 
+import { ServiceList } from "@/assets/services";
+import Image from "next/image";
 import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
@@ -10,10 +12,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Logo & About */}
           <div>
-            <h2 className="text-2xl font-bold text-white mb-2">Klyro5</h2>
+            <h2 className="text-2xl font-bold text-white mb-2 flex gap-2 items-center">
+              <div className="rounded-full w-[30px] h-[30px]">
+                <Image src="/logo2.png" width={30} height={30} alt="" />
+              </div>{" "}
+              Klyro5{" "}
+            </h2>
             <p className="text-sm text-gray-400">
               Your partner in crafting high-performance, user-first websites and
-              platforms.
+              platforms. We combine modern design with scalable, clean
+              development to deliver seamless online experiences that engage and
+              convert.
             </p>
           </div>
 
@@ -21,10 +30,10 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>Web Development</li>
-              <li>UI/UX Design</li>
-              <li>eCommerce Solutions</li>
-              <li>Branding</li>
+              {ServiceList.map((item, index) => {
+                if (index < 4) return <li key={item.title}>{item.title}</li>;
+                else return;
+              })}
             </ul>
           </div>
 
@@ -34,7 +43,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li>About Us</li>
               <li>Portfolio</li>
-              <li>Blog</li>
+
               <li>Contact</li>
             </ul>
           </div>
@@ -56,7 +65,7 @@ export default function Footer() {
                 <FaTwitter size={20} />
               </a>
             </div>
-            <p className="text-sm text-gray-400">📬 contact@klyro5.com</p>
+            <p className="text-sm text-gray-400"> contact@klyro5.com</p>
           </div>
         </div>
 
