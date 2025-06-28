@@ -7,6 +7,7 @@ import {
   SEO,
   UIUX,
   WEBAPP,
+  LOGODES,
 } from "../images";
 
 export const ServiceList = [
@@ -15,6 +16,12 @@ export const ServiceList = [
     image: CUSTOMWEB,
     description:
       "We craft responsive, high-performance websites tailored to your brand, optimized for speed and user experience.",
+  },
+  {
+    title: "Logo Designing ",
+    image: LOGODES,
+    description:
+      "Crafting memorable logos that reflect your brand identity and make a lasting impact on your audience.",
   },
   {
     title: "UI/UX Design",

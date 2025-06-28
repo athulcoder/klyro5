@@ -5,7 +5,7 @@ import { Hamburger } from "lucide-react";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="">
+    <html lang="en" className="bg-gray-900">
       <body className="bg-cyan-700 ">
         <TopNavigationBar />
 

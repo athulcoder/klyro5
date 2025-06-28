@@ -4,6 +4,7 @@ import MAINTENANCE from "./maintenance.png";
 import CUSTOMWEB from "./custom-web.png";
 import INTEGRATIONS from "./integrations.png";
 import CONSULTING from "./consulting.png";
+import LOGODES from "./logo-design.png";
 
 import ECOMMERCE from "./ecommerce.png";
 import UIUX from "./ui-ux.png";
@@ -17,4 +18,5 @@ export {
   INTEGRATIONS,
   ECOMMERCE,
   UIUX,
+  LOGODES,
 };
