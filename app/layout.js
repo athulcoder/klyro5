@@ -5,23 +5,19 @@ import { Hamburger } from "lucide-react";
 
 export const metadata = {
   title:
-    "Klyro5 | Web Development, Baby Photography, UI/UX Design & SEO Services",
+    "Klyro5 | High-Performance Web Development, UI/UX Design & SEO Services",
   description:
-    "Klyro5 is a creative digital studio offering custom web development, baby photography, SEO optimization, branding, UI/UX design, and performance-driven solutions to grow your business online.",
+    "Klyro5 is your partner in creating cutting-edge websites and digital platforms. From design to development, we craft high-performance, user-first experiences that grow your business online.",
 
   keywords: [
     "Klyro5",
     "web development",
-    "baby photography",
     "UI UX design",
     "Next.js website",
     "SEO services",
     "branding agency",
     "React web design",
-    "India photography agency",
     "digital marketing",
-    "portfolio website",
-    "photographer website",
     "custom websites",
     "performance optimization",
     "creative studio",
@@ -30,6 +26,10 @@ export const metadata = {
     "modern web design",
     "online business solutions",
     "responsive websites",
+    "UX consulting",
+    "website speed optimization",
+    "user-first design",
+    "clean development",
   ],
 
   metadataBase: new URL("https://klyro5.vercel.app"),
@@ -50,19 +50,19 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png", // for IOS devices when then add wesbite to home screen
+    apple: "/apple-touch-icon.png", // For iOS home screen icon
   },
 
   openGraph: {
     type: "website",
     url: "https://klyro5.vercel.app",
-    title: "Klyro5 | Web Development, Baby Photography & Branding",
+    title: "Klyro5 | High-Performance Web Development & Digital Solutions",
     description:
-      "Explore Klyro5 – a digital agency offering custom websites, photography, branding, and SEO. Build your online presence with speed and creativity.",
+      "Partner with Klyro5 to build modern, user-first websites that scale. We deliver seamless online experiences through clean development and intuitive UI/UX design.",
     siteName: "Klyro5",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Klyro5 Website Preview",
@@ -72,15 +72,15 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Klyro5 | Custom Web Design & Photography Agency",
+    title: "Klyro5 | Custom Web Design & Digital Performance Studio",
     description:
-      "High-performance websites, baby photography, UI/UX design, and SEO. Discover the creative edge of Klyro5.",
-    site: "@klyro5", // Your actual handle, if any
+      "Modern, high-performance websites with clean code, fast UX, and conversion-focused design. Klyro5 builds digital platforms that perform.",
+    site: "@klyro5", // Use your real handle if available
     creator: "@klyro5",
     images: ["/og-image.jpg"],
   },
 
-  category: "Web Design, Photography, Digital Agency",
+  category: "Web Design, Digital Agency, UI/UX Design",
   bookmarks: [
     "https://klyro5.vercel.app/about",
     "https://klyro5.vercel.app/contact",
@@ -89,7 +89,7 @@ export const metadata = {
   ],
 
   other: {
-    whatsapp: "+919605470067",
+    whatsapp: "+919947811507",
     instagram: "https://instagram.com/klyro.5",
     facebook: "https://facebook.com/klyro.5",
     linkedin: "https://linkedin.com/company/klyro5",
