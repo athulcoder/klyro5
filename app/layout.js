@@ -77,7 +77,7 @@ export const metadata = {
       "Modern, high-performance websites with clean code, fast UX, and conversion-focused design. Klyro5 builds digital platforms that perform.",
     site: "@klyro5", // Use your real handle if available
     creator: "@klyro5",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.jng"],
   },
 
   category: "Web Design, Digital Agency, UI/UX Design",
