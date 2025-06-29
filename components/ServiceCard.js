@@ -11,7 +11,7 @@ function ServiceCard({ title, image, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 w-full sm:w-[240px] md:w-[260px] lg:w-[280px] mx-auto"
+      className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 w-full sm:w-[240px] md:w-[260px] lg:w-[240px] mx-auto"
     >
       <div className="relative w-full h-[160px] sm:h-[180px] md:h-[200px]">
         <Image src={image} alt={title} fill className="object-cover" />
