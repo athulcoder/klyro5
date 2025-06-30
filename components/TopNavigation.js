@@ -1,7 +1,7 @@
 "use client";
 
 import SideNavPanel from "@/handlers/Hamburger";
-import Hamburger from "@/handlers/Hamburger";
+
 import { BookCheck, CompassIcon, Home, Phone, Workflow } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

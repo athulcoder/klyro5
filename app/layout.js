@@ -1,6 +1,6 @@
 import TopNavigationBar from "@/components/TopNavigation";
 import "./globals.css";
-import SideNavigation from "@/components/SideNavigation";
+// import SideNavigation from "@/components/SideNavigation";
 import { Hamburger } from "lucide-react";
 
 export const metadata = {
