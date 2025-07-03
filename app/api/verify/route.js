@@ -1,4 +1,5 @@
 import { connectDB } from "@/lib/db";
+import { Client } from "@/models/client.model";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
@@ -13,5 +14,13 @@ export async function POST(req) {
 
   try {
     await connectDB();
+
+    const newClient = await new Client({ fullName, phone, email });
+    await newClient.save();
+
+    return NextResponse.json({
+      success: true,
+      message: "Client added successfully",
+    });
   } catch (error) {}
 }
