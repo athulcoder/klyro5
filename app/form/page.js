@@ -415,7 +415,7 @@ export default function MultiStepForm() {
                 multiple
                 accept="image/*,video/*,.pdf"
                 onChange={handleMultiFileChange}
-                className="mb-4"
+                className="mb-4 truncate"
               />
 
               {uploading && (
@@ -445,11 +445,11 @@ export default function MultiStepForm() {
               )}
 
               {formData.mediaUploads.length > 0 && (
-                <div className="space-y-2 max-h-48 overflow-y-auto">
+                <div className="space-y-2 max-h-48 overflow-y-auto ">
                   {formData.mediaUploads.map((file, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center justify-between bg-gray-800 rounded px-3 py-2"
+                      className="flex items-center justify-between bg-gray-800 rounded px-3 py-2 "
                     >
                       <div className="flex items-center gap-3">
                         {file.type.startsWith("image/") ? (
@@ -489,7 +489,7 @@ export default function MultiStepForm() {
                           </svg>
                         )}
 
-                        <span className="truncate max-w-xs text-sm">
+                        <span className="truncate max-w-xs text-sm text-wrap">
                           {file.name}
                         </span>
                       </div>
