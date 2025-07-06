@@ -1,4 +1,5 @@
 import { connectDB } from "@/lib/db";
+import { verifyClient } from "@/lib/verifyClient";
 import { Client } from "@/models/client.model";
 import { NextResponse } from "next/server";
 
@@ -8,19 +9,10 @@ export async function POST(req) {
   if (!fullName || !phone || !email) {
     return NextResponse.json({
       success: false,
-      message: "All Fields are required ",
+      message: "All fields are required",
     });
   }
+  const res = verifyClient({ fullName, phone, email });
 
-  try {
-    await connectDB();
-
-    const newClient = await new Client({ fullName, phone, email });
-    await newClient.save();
-
-    return NextResponse.json({
-      success: true,
-      message: "Client added successfully",
-    });
-  } catch (error) {}
+  return res;
 }
