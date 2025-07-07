@@ -4,7 +4,7 @@ import { Client } from "@/models/client.model";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
-  const formData = await req.formData();
+  const formData = await req.json();
 
   console.log(formData.fullName, formData.email, formData.phone);
   if (!formData.fullName || !formData.phone || !formData.email) {

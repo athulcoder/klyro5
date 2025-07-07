@@ -41,11 +41,11 @@ export default function MultiStepForm() {
     companyName: "",
     companyAddress: "",
     companyEmail: "",
-    companyDesc: "",
-    instagram: "",
-    facebook: "",
-    github: "",
-    linkedin: "",
+    companyDescription: "",
+    instagramLink: "",
+    facebookLink: "",
+    githubLink: "",
+    linkedinLink: "",
     x: "",
     pagesRequired: [],
     domainName: "",
@@ -144,9 +144,10 @@ export default function MultiStepForm() {
         errors.companyAddress = "Company address is required.";
       if (!formData.companyEmail)
         errors.companyEmail = "Company email is required.";
-      if (!formData.companyDesc)
-        errors.companyDesc = "Company description is required.";
-      if (!formData.instagram) errors.instagram = "Instagram link is required.";
+      if (!formData.companyDescription)
+        errors.companyDescription = "Company description is required.";
+      if (!formData.instagramLink)
+        errors.instagramLink = "instagramLink link is required.";
     }
 
     if (step === 3) {
@@ -183,7 +184,9 @@ export default function MultiStepForm() {
         body: JSON.stringify(formData),
       });
 
-      console.log(res);
+      const data = await res.json();
+
+      console.log(data);
     }
   };
 
@@ -292,41 +295,41 @@ export default function MultiStepForm() {
                   error={formErrors.companyEmail}
                 />
                 <Textarea
-                  name="companyDesc"
+                  name="companyDescription"
                   label="Company Description"
                   required
-                  value={formData.companyDesc}
+                  value={formData.companyDescription}
                   onChange={handleChange}
-                  error={formErrors.companyDesc}
+                  error={formErrors.companyDescription}
                 />
               </div>
 
               <SectionTitle title="Social Media Links" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
-                  name="instagram"
-                  label="Instagram"
+                  name="instagramLink"
+                  label="instagramLink"
                   required
-                  value={formData.instagram}
+                  value={formData.instagramLink}
                   onChange={handleChange}
-                  error={formErrors.instagram}
+                  error={formErrors.instagramLink}
                 />
                 <Input
-                  name="facebook"
-                  label="Facebook"
-                  value={formData.facebook}
-                  onChange={handleChange}
-                />
-                <Input
-                  name="github"
-                  label="GitHub"
-                  value={formData.github}
+                  name="facebookLink"
+                  label="facebookLink"
+                  value={formData.facebookLink}
                   onChange={handleChange}
                 />
                 <Input
-                  name="linkedin"
-                  label="LinkedIn"
-                  value={formData.linkedin}
+                  name="githubLink"
+                  label="githubLink"
+                  value={formData.githubLink}
+                  onChange={handleChange}
+                />
+                <Input
+                  name="linkedinLink"
+                  label="linkedinLink"
+                  value={formData.linkedinLink}
                   onChange={handleChange}
                 />
                 <Input
