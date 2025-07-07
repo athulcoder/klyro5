@@ -22,7 +22,7 @@ const projectSchema = new mongoose.Schema(
     domainName: { type: String, lowercase: true },
     pagesRequired: { type: [String], required: true },
     websiteStyle: { type: String, required: true },
-
+    uploadNotes: { type: String },
     // Media file
     fileUrls: { type: [String] },
   },
