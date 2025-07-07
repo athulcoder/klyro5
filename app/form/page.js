@@ -168,7 +168,7 @@ export default function MultiStepForm() {
     setStep((prev) => Math.max(prev - 1, 0));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Final validation before submit (optional)
     const errors = {};
@@ -177,7 +177,13 @@ export default function MultiStepForm() {
     setFormErrors(errors);
     if (Object.keys(errors).length === 0) {
       console.log("Form submitted", formData);
-      // Submit form data here (e.g., API call)
+
+      const res = await fetch("/api/verify", {
+        method: "POST",
+        body: JSON.stringify(formData),
+      });
+
+      console.log(res);
     }
   };
 
