@@ -2,13 +2,14 @@ import mongoose from "mongoose";
 
 const projectSchema = new mongoose.Schema(
   {
-    client: {
+    clientId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Client",
+      required: true,
     },
     companyName: { type: String, required: true },
     companyEmail: { type: String, required: true, lowercase: true },
-    companyAdress: { type: String, required: true },
+    companyAddress: { type: String, required: true },
     companyDescription: { type: String, required: true },
 
     // Socail midea links

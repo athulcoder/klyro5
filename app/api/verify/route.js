@@ -1,3 +1,4 @@
+import { createProject } from "@/lib/createProject";
 import { connectDB } from "@/lib/db";
 import { verifyClient } from "@/lib/verifyClient";
 import { Client } from "@/models/client.model";
@@ -16,7 +17,7 @@ export async function POST(req) {
 
   // first we create the client and then we add the project with the client id that is the ObjectId
 
-  const res = await verifyClient(
+  const clientId = await verifyClient(
     formData.fullName,
     formData.phone,
     formData.email
@@ -36,7 +37,10 @@ export async function POST(req) {
     });
   }
 
-  console.log(formData);
-  if (res)
-    return NextResponse.json({ succes: true, message: "Client Created" });
+  // create the project model
+
+  const res = await createProject(formData, clientId);
+
+  if (!res)
+    return NextResponse.json({ succes: false, message: "Error from server" });
 }

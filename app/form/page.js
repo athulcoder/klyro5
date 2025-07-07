@@ -49,9 +49,9 @@ export default function MultiStepForm() {
     x: "",
     pagesRequired: [],
     domainName: "",
-    style: "",
+    websiteStyle: "",
     uploadNotes: "",
-    mediaUploads: [], // Store multiple files here
+    fileUrls: [], // Store multiple files here
   });
 
   const [formErrors, setFormErrors] = useState({});
@@ -109,7 +109,7 @@ export default function MultiStepForm() {
     setTimeout(() => {
       setFormData((prev) => ({
         ...prev,
-        mediaUploads: [...prev.mediaUploads, ...filteredFiles],
+        fileUrls: [...prev.fileUrls, ...filteredFiles],
       }));
       setUploading(false);
     }, 1500);
@@ -117,9 +117,9 @@ export default function MultiStepForm() {
 
   const handleRemoveFile = (index) => {
     setFormData((prev) => {
-      const updated = [...prev.mediaUploads];
+      const updated = [...prev.fileUrls];
       updated.splice(index, 1);
-      return { ...prev, mediaUploads: updated };
+      return { ...prev, fileUrls: updated };
     });
 
     // Reset file input to allow re-selection of the same files
@@ -453,9 +453,9 @@ export default function MultiStepForm() {
                 </div>
               )}
 
-              {formData.mediaUploads.length > 0 && (
+              {formData.fileUrls.length > 0 && (
                 <div className="space-y-2 max-h-48 overflow-y-auto ">
-                  {formData.mediaUploads.map((file, idx) => (
+                  {formData.fileUrls.map((file, idx) => (
                     <div
                       key={idx}
                       className="flex items-center justify-between bg-gray-800 rounded px-3 py-2 "
