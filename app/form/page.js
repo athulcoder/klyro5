@@ -154,7 +154,8 @@ export default function MultiStepForm() {
       if (formData.pagesRequired.length === 0)
         errors.pagesRequired = "Select at least one page.";
       if (!formData.domainName) errors.domainName = "Domain name is required.";
-      if (!formData.style) errors.style = "Please choose a style.";
+      if (!formData.websiteStyle)
+        errors.websiteStyle = "Please choose a websiteStyle.";
     }
 
     setFormErrors(errors);
@@ -171,9 +172,18 @@ export default function MultiStepForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Final validation before submit (optional)
+
+    // final level validation
+
     const errors = {};
     // Add final validations here if needed
+    if (step === 3) {
+      if (formData.pagesRequired.length === 0)
+        errors.pagesRequired = "Select at least one page.";
+      if (!formData.domainName) errors.domainName = "Domain name is required.";
+      if (!formData.websiteStyle)
+        errors.websiteStyle = "Please choose a websiteStyle.";
+    }
 
     setFormErrors(errors);
     if (Object.keys(errors).length === 0) {
@@ -203,7 +213,9 @@ export default function MultiStepForm() {
             <div className="mt-3 h-2 bg-gray-700 rounded-full overflow-hidden">
               <div
                 className="h-2 bg-blue-500 transition-all duration-300"
-                style={{ width: `${((step + 1) / steps.length) * 100}%` }}
+                style={{
+                  width: `${((step + 1) / steps.length) * 100}%`,
+                }}
               />
             </div>
           )}
@@ -386,29 +398,29 @@ export default function MultiStepForm() {
 
               <div>
                 <label className="block text-sm text-gray-300 mb-1">
-                  What kind of style are you aiming for?
+                  What kind of websiteStyle are you aiming for?
                 </label>
                 <div className="space-y-1">
-                  {styleOptions.map((style) => (
+                  {styleOptions.map((websiteStyle) => (
                     <label
-                      key={style}
+                      key={websiteStyle}
                       className="flex items-center gap-2 text-sm"
                     >
                       <input
                         type="radio"
-                        name="style"
-                        value={style}
-                        checked={formData.style === style}
+                        name="websiteStyle"
+                        value={websiteStyle}
+                        checked={formData.websiteStyle === websiteStyle}
                         onChange={handleChange}
                         className="accent-blue-500"
                       />
-                      {style}
+                      {websiteStyle}
                     </label>
                   ))}
                 </div>
-                {formErrors.style && (
+                {formErrors.websiteStyle && (
                   <span className="text-red-500 text-sm">
-                    {formErrors.style}
+                    {formErrors.websiteStyle}
                   </span>
                 )}
               </div>

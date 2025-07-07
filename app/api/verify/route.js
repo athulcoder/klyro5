@@ -43,4 +43,6 @@ export async function POST(req) {
 
   if (!res)
     return NextResponse.json({ succes: false, message: "Error from server" });
+
+  return NextResponse.json({ success: true, message: "Project added" });
 }
