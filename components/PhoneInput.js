@@ -30,15 +30,60 @@ export default function PhoneNumberInput({
       </label>
 
       <PhoneInput
+        onlyCountries={[
+          "in",
+          "us",
+          "cn",
+          "pk",
+          "ae",
+          "sa",
+          "kw",
+          "bh",
+          "qa",
+          "om", // Gulf
+          "il",
+          "ru",
+          "ie",
+          "gb", // Individual countries
+          "at",
+          "be",
+          "bg",
+          "hr",
+          "cy",
+          "cz",
+          "dk",
+          "ee",
+          "fi",
+          "fr",
+          "de",
+          "gr",
+          "hu",
+          "it",
+          "lv",
+          "lt",
+          "lu",
+          "nl",
+          "pl",
+          "pt",
+          "ro",
+          "sk",
+          "si",
+          "es",
+          "se", // European countries
+        ]}
+        dropdownStyle={{ backgroundColor: "#2d3748" }}
+        buttonStyle={{ backgroundColor: "#2d3748" }}
+        dropdownClass="bg-gray-700"
+        containerStyle={{ backgroundColor: "blue" }}
         inputProps={{
           name,
           required,
           id: name,
-          className: `w-full rounded border bg-gray-800 border-gray-700 px-3 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+          className: `w-full ml-[35px] rounded border bg-gray-800 border-gray-700 px-3 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
             error ? "border-red-500" : ""
           }`,
         }}
-        country={"us"}
+        country={"in"}
         value={phone}
         onChange={handleChange}
         specialLabel={""} // Hide react-phone-input-2's built-in label
