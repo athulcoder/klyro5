@@ -1,6 +1,9 @@
 "use client";
+import LoadingScreen from "@/components/LoadingScreen";
 import PhoneNumberInput from "@/components/PhoneInput";
 import PhoneInput from "@/components/PhoneInput";
+import { useRouter } from "next/navigation";
+import { Router } from "next/router";
 import { useRef, useState } from "react";
 
 const steps = [
@@ -34,6 +37,8 @@ const styleOptions = [
 ];
 
 export default function MultiStepForm() {
+  const [submitLoading, setSubmitLoading] = useState(false);
+  const router = useRouter();
   const fileInputRef = useRef(null);
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
@@ -189,7 +194,9 @@ export default function MultiStepForm() {
     }
 
     setFormErrors(errors);
+
     if (Object.keys(errors).length === 0) {
+      setSubmitLoading(true);
       console.log("Form submitted", formData);
 
       const res = await fetch("/api/verify", {
@@ -198,11 +205,13 @@ export default function MultiStepForm() {
       });
 
       const data = await res.json();
-
-      console.log(data);
+      setSubmitLoading(false);
+      if (data.success) {
+        router.push("/");
+      }
     }
   };
-
+  if (submitLoading) return <LoadingScreen />;
   return (
     <div className="bg-gray-900 min-h-screen text-white pt-24 px-4">
       <div className="max-w-4xl mx-auto">

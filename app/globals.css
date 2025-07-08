@@ -124,3 +124,26 @@ body {
   scrollbar-width: none;
   /* Firefox */
 }
+
+
+/* loading animation */
+
+@keyframes klyroGlow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    text-shadow: 0 0 6px #3b82f6, 0 0 12px #3b82f6;
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-4px);
+    text-shadow: 0 0 2px #3b82f6, 0 0 6px #3b82f6;
+    opacity: 0.8;
+  }
+}
+
+.animate-klyroGlow {
+  animation: klyroGlow 2s ease-in-out infinite;
+}
