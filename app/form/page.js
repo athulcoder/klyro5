@@ -1,4 +1,6 @@
 "use client";
+import PhoneNumberInput from "@/components/PhoneInput";
+import PhoneInput from "@/components/PhoneInput";
 import { useRef, useState } from "react";
 
 const steps = [
@@ -255,10 +257,10 @@ export default function MultiStepForm() {
                   onChange={handleChange}
                   error={formErrors.fullName}
                 />
-                <Input
+                <PhoneNumberInput
                   name="phone"
-                  label="Phone Number"
-                  required
+                  label="Phone"
+                  require
                   value={formData.phone}
                   onChange={handleChange}
                   error={formErrors.phone}
