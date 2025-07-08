@@ -135,7 +135,8 @@ export default function MultiStepForm() {
 
     if (step === 1) {
       if (!formData.fullName) errors.fullName = "Full name is required.";
-      if (!formData.phone) errors.phone = "Phone number is required.";
+      if (formData.phone.length < 12)
+        errors.phone = "Phone number is required.";
       if (!formData.email) errors.email = "Email address is required.";
     }
 
