@@ -1,7 +1,7 @@
 "use client";
 
 import SideNavPanel from "@/handlers/Hamburger";
-
+import { FaWpforms } from "react-icons/fa";
 import { BookCheck, CompassIcon, Home, Phone, Workflow } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -33,6 +33,11 @@ const navLinks = [
     label: "About",
     href: "/about",
     icon: CompassIcon,
+  },
+  {
+    label: "Form",
+    href: "/form",
+    icon: FaWpforms,
   },
 ];
 function TopNavigationBar() {

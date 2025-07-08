@@ -1,4 +1,5 @@
 "use client";
+import { FaWpforms } from "react-icons/fa";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -14,6 +15,11 @@ export const navItems = [
   { label: "Services", href: "/services", icon: CiDesktop },
   { label: "Contact", href: "/contact", icon: CiMobile3 },
   { label: "About", href: "/about", icon: LiaUserAltSolid },
+  {
+    label: "Form",
+    href: "/form",
+    icon: FaWpforms,
+  },
 ];
 
 export default function SideNavPanel({ isOpen, onClose }) {
@@ -41,7 +47,7 @@ export default function SideNavPanel({ isOpen, onClose }) {
             exit={{ y: "-100%" }}
             transition={{ type: "tween", ease: "easeOut", duration: 0.3 }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full h-[40vh] bg-[#101726] overflow-y-auto border-b border-white/10 shadow-2xl p-6 rounded-b-2xl"
+            className="w-full h-[50vh] bg-[#101726] overflow-y-auto border-b border-white/10 shadow-2xl p-6 rounded-b-2xl"
           >
             <div className="flex justify-end mb-6">
               <button
