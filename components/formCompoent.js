@@ -40,6 +40,7 @@ export default function FormComponent() {
   const [submitLoading, setSubmitLoading] = useState(false);
   const router = useRouter();
   const fileInputRef = useRef(null);
+  const [submitStatus, setSubmitStatus] = useState(true);
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -184,6 +185,7 @@ export default function FormComponent() {
     // final level validation
 
     const errors = {};
+
     // Add final validations here if needed
     if (step === 3) {
       if (formData.pagesRequired.length === 0)
@@ -209,10 +211,12 @@ export default function FormComponent() {
       setSubmitLoading(false);
       if (data.success) {
         router.push("/");
+        setSubmitStatus(true);
       }
     }
   };
   if (submitLoading) return <LoadingScreen />;
+  else if (submitStatus) return <></>;
   return (
     <div className="bg-gray-900 min-h-screen text-white pt-24 px-4">
       <div className="max-w-4xl mx-auto">

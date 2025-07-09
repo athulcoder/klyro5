@@ -181,8 +181,6 @@ export default function MultiStepForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // final level validation
-
     const errors = {};
     // Add final validations here if needed
     if (step === 3) {
