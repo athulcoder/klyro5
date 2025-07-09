@@ -36,7 +36,7 @@ const styleOptions = [
   "Other",
 ];
 
-export default function MultiStepForm() {
+export default function FormComponent() {
   const [submitLoading, setSubmitLoading] = useState(false);
   const router = useRouter();
   const fileInputRef = useRef(null);
