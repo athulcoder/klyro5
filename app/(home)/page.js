@@ -1,7 +1,7 @@
 import { ServiceList } from "@/assets/services";
 import WhyChooseKlyro5 from "@/components/Features";
 import Footer from "@/components/Footer";
-import FormComponent from "@/components/formCompoent";
+import FormComponent from "@/components/formComponent";
 import GradientBackground from "@/components/GradientBackground";
 import ServiceCard from "@/components/ServiceCard";
 import ServicesGrid from "@/components/ServicesGrid";

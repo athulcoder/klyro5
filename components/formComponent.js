@@ -5,6 +5,7 @@ import PhoneInput from "@/components/PhoneInput";
 import { useRouter } from "next/navigation";
 import { Router } from "next/router";
 import { useRef, useState } from "react";
+import FormSubmitMessage from "./FormSubmitMessage";
 
 const steps = [
   "Introduction",
@@ -40,7 +41,7 @@ export default function FormComponent() {
   const [submitLoading, setSubmitLoading] = useState(false);
   const router = useRouter();
   const fileInputRef = useRef(null);
-  const [submitStatus, setSubmitStatus] = useState(true);
+  const [submitStatus, setSubmitStatus] = useState(false);
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -216,7 +217,7 @@ export default function FormComponent() {
     }
   };
   if (submitLoading) return <LoadingScreen />;
-  else if (submitStatus) return <></>;
+  else if (submitStatus) return <FormSubmitMessage />;
   return (
     <div className="bg-gray-900 min-h-screen text-white pt-24 px-4">
       <div className="max-w-4xl mx-auto">

@@ -34,11 +34,6 @@ const navLinks = [
     href: "/about",
     icon: CompassIcon,
   },
-  {
-    label: "Form",
-    href: "/form",
-    icon: FaWpforms,
-  },
 ];
 function TopNavigationBar() {
   const [showMobileNav, setShowMobileNav] = useState(false);
