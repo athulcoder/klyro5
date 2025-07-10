@@ -443,7 +443,7 @@ export default function FormComponent() {
                 )}
               </div>
 
-              <SectionTitle title="Media Uploads (Optional)" />
+              {/* <SectionTitle title="Media Uploads (Optional)" />
               <p className="text-sm text-gray-400 mb-2">
                 Upload images, videos, or PDFs you’d like us to use on the
                 website. You can select multiple files at once.
@@ -455,7 +455,7 @@ export default function FormComponent() {
                 accept="image/*,video/*,.pdf"
                 onChange={handleMultiFileChange}
                 className="mb-4 truncate"
-              />
+              /> */}
 
               {uploading && (
                 <div className="flex items-center gap-2 text-blue-400 mb-4">
