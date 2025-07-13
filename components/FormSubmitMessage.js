@@ -8,7 +8,7 @@ function FormSubmitMessage() {
       <h2 className="text-xl font-semibold mb-1">Thank you!</h2>
       <p className="text-center text-gray-300 text-sm">
         Your form has been submitted successfully. <br />
-        Our team will contact you as soon as possible.
+        Our team will contact you as soon as possible...
       </p>
     </div>
   );
